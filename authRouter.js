@@ -16,6 +16,8 @@ router.post(
   controller.registration,
 );
 router.post('/login', controller.login);
-router.get('/users', roleMiddleware(['USER', 'ADMIN']), controller.getUsers);
+router.post('/addcont', controller.addContactDB);
+router.delete('/cont/:id', controller.delContactDB);
+router.get('/cont', controller.getContacts);
 
 module.exports = router;
